@@ -4,6 +4,6 @@ import retrofit2.http.GET
 
 internal interface IngredientsService {
 
-    @GET("list.php?c=list")
+    @GET("list.php?i=list")
     suspend fun getIngredients(): IngredientsResponse
 }

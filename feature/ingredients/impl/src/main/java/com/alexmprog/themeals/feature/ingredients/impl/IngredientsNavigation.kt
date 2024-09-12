@@ -4,7 +4,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.alexmprog.themeals.core.ui.navigation.FeatureNavigation
-import com.alexmprog.themeals.feature.ingredients.api.IngredientsListScreen
+import com.alexmprog.themeals.feature.ingredients.api.IngredientsListScreenRoute
 import com.alexmprog.themeals.feature.ingredients.impl.presentation.IngredientsListScreen
 import com.alexmprog.themeals.feature.meals.api.MealsListScreenRoute
 import com.alexmprog.themeals.feature.meals.api.domain.MealsSearchSource
@@ -17,7 +17,7 @@ class IngredientsNavigation : FeatureNavigation {
 
     override fun build(graphBuilder: NavGraphBuilder, navController: NavHostController) =
         with(graphBuilder) {
-            composable<IngredientsListScreen> {
+            composable<IngredientsListScreenRoute> {
                 IngredientsListScreen(onIngredientClick = {
                     navController.navigate(
                         MealsListScreenRoute(it.name, MealsSearchSource.Ingredient)

@@ -11,6 +11,6 @@ internal data class IngredientsResponse(
 
 @Serializable
 internal data class IngredientDTO(
-    @SerialName("strIngredient1")
+    @SerialName("strIngredient")
     val name: String
 )
