@@ -1,11 +1,11 @@
 plugins {
-    alias(libs.plugins.convention.android.library)
+    alias(libs.plugins.convention.android.library.compose)
     alias(libs.plugins.convention.koin)
     alias(libs.plugins.convention.serialization)
 }
 
 android {
-    namespace = "com.alexmprog.themeals.feature.meals.impl"
+    namespace = "com.alexmprog.themeals.inject"
 }
 
 dependencies {
@@ -16,6 +16,7 @@ dependencies {
     implementation(projects.feature.categories.impl)
     implementation(projects.feature.ingredients.impl)
     implementation(projects.feature.meals.impl)
+    implementation(libs.androidx.compose.runtime)
     implementation(libs.koin.android.compose)
     testImplementation(libs.junit)
 }

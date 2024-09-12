@@ -9,7 +9,7 @@ import org.koin.core.annotation.Module
 import retrofit2.Retrofit
 
 @Module
-@ComponentScan
+@ComponentScan("com.alexmprog.themeals.feature.ingredients.impl")
 class IngredientsFeatureModule {
 
     @Factory

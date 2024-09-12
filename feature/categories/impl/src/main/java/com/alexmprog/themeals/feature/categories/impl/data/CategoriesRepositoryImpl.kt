@@ -14,13 +14,14 @@ import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import org.koin.core.annotation.Named
 import org.koin.core.annotation.Single
 
 @Single
 internal class CategoriesRepositoryImpl(
     private val categoryDao: CategoryDao,
     private val categoriesService: CategoriesService,
-    private val ioDispatcher: CoroutineDispatcher
+    @Named("IoDispatcher") private val dispatcher: CoroutineDispatcher
 ) : CategoriesRepository {
 
     override fun getCategories(): Flow<Resource<List<Category>>> = flow {
@@ -37,7 +38,7 @@ internal class CategoriesRepositoryImpl(
         }
     }.map { it -> Resource.Success(it.map { it.toModel() }) as Resource<List<Category>> }
         .catch { emit(Resource.Error(ErrorType.Network)) }
-        .flowOn(ioDispatcher)
+        .flowOn(dispatcher)
 
 }
 

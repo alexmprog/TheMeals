@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.alexmprog.thecocktails"
+    namespace = "com.alexmprog.themeals"
 
     defaultConfig {
         applicationId = "com.alexmprog.themeals"

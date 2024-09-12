@@ -14,13 +14,14 @@ import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import org.koin.core.annotation.Named
 import org.koin.core.annotation.Single
 
 @Single
 internal class IngredientsRepositoryImpl(
     private val ingredientDao: IngredientDao,
     private val ingredientsService: IngredientsService,
-    private val ioDispatcher: CoroutineDispatcher
+    @Named("IoDispatcher") private val dispatcher: CoroutineDispatcher
 ) : IngredientsRepository {
 
     override fun getIngredients(): Flow<Resource<List<Ingredient>>> = flow {
@@ -37,7 +38,7 @@ internal class IngredientsRepositoryImpl(
         }
     }.map { it -> Resource.Success(it.map { it.toModel() }) as Resource<List<Ingredient>> }
         .catch { emit(Resource.Error(ErrorType.Network)) }
-        .flowOn(ioDispatcher)
+        .flowOn(dispatcher)
 }
 
 internal fun IngredientDTO.toEntity(): IngredientEntity = IngredientEntity(name, null)

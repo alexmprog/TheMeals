@@ -13,12 +13,13 @@ import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import org.koin.core.annotation.Named
 import org.koin.core.annotation.Single
 
 @Single
 internal class MealsRepositoryImpl(
     private val mealsService: MealsService,
-    private val ioDispatcher: CoroutineDispatcher
+    @Named("IoDispatcher") private val dispatcher: CoroutineDispatcher
 ) : MealsRepository {
 
     override fun getMealsBySource(
@@ -34,7 +35,7 @@ internal class MealsRepositoryImpl(
         )
     }.map { Resource.Success(it.map { it.toModel() }) as Resource<List<Meal>> }
         .catch { emit(Resource.Error(ErrorType.Network)) }
-        .flowOn(ioDispatcher)
+        .flowOn(dispatcher)
 
     override fun getMealDetails(id: Int): Flow<Resource<MealDetails>> = emptyFlow()
 

@@ -3,7 +3,7 @@ package com.alexmprog.themeals.core.ui.navigation
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 
-interface NavigationRouteBuilder {
+interface FeatureNavigation {
 
-    fun NavGraphBuilder.build(navController: NavHostController)
+    fun build(graphBuilder: NavGraphBuilder, navController: NavHostController)
 }
