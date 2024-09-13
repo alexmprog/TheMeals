@@ -47,10 +47,12 @@ internal class MealsRepositoryImpl(
 internal fun MealDTO.toModel(): Meal = Meal(id, name, image)
 
 internal fun MealDetailsDTO.toModel(): MealDetails {
-    val ingredients = mutableListOf<Pair<String, String>>()
+    val ingredients = mutableListOf<String>()
     val addMeasuredIngredient: (String?, String?) -> Unit = { ingredient, measure ->
-        if (!ingredient.isNullOrEmpty() && !measure.isNullOrEmpty())
-            ingredients.add(Pair(ingredient, measure))
+        val value = if (!ingredient.isNullOrEmpty()) {
+            if (!measure.isNullOrEmpty()) "$measure $ingredient" else ingredient
+        } else null
+        value?.let { ingredients.add(it) }
     }
     addMeasuredIngredient(ingredient1, measure1)
     addMeasuredIngredient(ingredient2, measure2)
@@ -72,5 +74,5 @@ internal fun MealDetailsDTO.toModel(): MealDetails {
     addMeasuredIngredient(ingredient18, measure18)
     addMeasuredIngredient(ingredient19, measure19)
     addMeasuredIngredient(ingredient20, measure20)
-    return MealDetails(id, category, area, description ?: "", ingredients)
+    return MealDetails(id, category, area, description, youtubeUrl, ingredients)
 }

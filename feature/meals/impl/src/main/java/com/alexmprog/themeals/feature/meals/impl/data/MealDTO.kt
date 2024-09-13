@@ -36,7 +36,9 @@ internal data class MealDetailsDTO(
     @SerialName("strArea")
     val area: String,
     @SerialName("strInstructions")
-    val description: String?,
+    val description: String,
+    @SerialName("strYoutube")
+    val youtubeUrl: String?,
     @SerialName("strIngredient1")
     val ingredient1: String?,
     @SerialName("strIngredient2")

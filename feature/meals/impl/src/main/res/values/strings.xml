@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="feature_meals_impl_category_template">Category: %s</string>
-    <string name="feature_meals_impl_area_template">Area: %s</string>
+    <string name="feature_meals_impl_name">Name:</string>
+    <string name="feature_meals_impl_category">Category:</string>
+    <string name="feature_meals_impl_area">Area:</string>
     <string name="feature_meals_impl_ingredients">Ingredients/Measures:</string>
-    <string name="feature_meals_impl_instructions_template">Instructions: %s</string>
+    <string name="feature_meals_impl_instructions">Instructions:</string>
+    <string name="feature_meals_impl_youtube">See video on Youtube:</string>
 </resources>

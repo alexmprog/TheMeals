@@ -11,7 +11,8 @@ data class MealDetails(
     val category: String,
     val area: String,
     val description: String,
-    val measuredIngredients: List<Pair<String, String>>
+    val youtubeUrl: String?,
+    val measuredIngredients: List<String>
 )
 
 enum class MealsSearchSource {

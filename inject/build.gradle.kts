@@ -16,6 +16,7 @@ dependencies {
     implementation(projects.feature.categories.impl)
     implementation(projects.feature.ingredients.impl)
     implementation(projects.feature.meals.impl)
+    implementation(projects.feature.youtube)
     implementation(libs.androidx.compose.runtime)
     implementation(libs.koin.android.compose)
     testImplementation(libs.junit)

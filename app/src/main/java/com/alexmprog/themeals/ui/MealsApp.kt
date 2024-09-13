@@ -38,6 +38,7 @@ import com.alexmprog.themeals.feature.categories.api.CategoriesListScreenRoute
 import com.alexmprog.themeals.feature.ingredients.api.IngredientsListScreenRoute
 import com.alexmprog.themeals.feature.meals.api.MealDetailsScreenRoute
 import com.alexmprog.themeals.feature.meals.api.MealsListScreenRoute
+import com.alexmprog.themeals.feature.youtube.YoutubeScreenRoute
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -144,12 +145,15 @@ private fun getTitle(destination: NavDestination?): Int? = destination?.let {
         destination.hasRoute<IngredientsListScreenRoute>() -> R.string.ingredients
         destination.hasRoute<MealsListScreenRoute>() -> R.string.meals
         destination.hasRoute<MealDetailsScreenRoute>() -> R.string.details
+        destination.hasRoute<YoutubeScreenRoute>() -> R.string.youtube
         else -> null
     }
 } ?: run { null }
 
 private fun canNavigateBack(destination: NavDestination?): Boolean = destination?.let {
-    destination.hasRoute<MealsListScreenRoute>() || destination.hasRoute<MealDetailsScreenRoute>()
+    destination.hasRoute<MealsListScreenRoute>() ||
+            destination.hasRoute<MealDetailsScreenRoute>() ||
+            destination.hasRoute<YoutubeScreenRoute>()
 } ?: run { false }
 
 private data class NavItem(
