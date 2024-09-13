@@ -15,5 +15,5 @@ internal interface MealsService {
     suspend fun getMealsByArea(@Query("g") area: String): MealsResponse
 
     @GET("lookup.php")
-    suspend fun getMealDetails(@Query("i") id: String): MealsResponse
+    suspend fun getMealDetails(@Query("i") id: String): MealDetailsResponse
 }

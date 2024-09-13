@@ -6,12 +6,14 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
@@ -29,12 +31,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavGraph.Companion.findStartDestination
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.alexmprog.themeals.R
 import com.alexmprog.themeals.feature.categories.api.CategoriesListScreenRoute
 import com.alexmprog.themeals.feature.ingredients.api.IngredientsListScreenRoute
+import com.alexmprog.themeals.feature.meals.api.MealDetailsScreenRoute
 import com.alexmprog.themeals.feature.meals.api.MealsListScreenRoute
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -62,15 +64,39 @@ internal fun MealsApp(appState: MealsAppState) {
         modifier = Modifier.fillMaxSize(),
         topBar = {
             getTitle(currentDestination)?.let {
-                TopAppBar(title = { Text(stringResource(it)) })
+                TopAppBar(title = { Text(stringResource(it)) },
+                    navigationIcon = {
+                        if (canNavigateBack(currentDestination)) {
+                            IconButton(onClick = {
+                                navController.navigateUp()
+                            }) {
+                                Icon(
+                                    imageVector = Icons.Default.ArrowBack,
+                                    contentDescription = null
+                                )
+                            }
+                        }
+                    })
             }
         },
         bottomBar = {
-            navItems.firstOrNull {
-                currentDestination?.hasRoute(it.screenRoute::class) == true
-            }?.let {
-                MainNavigationBar(navItems, navController)
-            }
+            var selectedTabIndex by rememberSaveable { mutableIntStateOf(0) }
+            navItems.firstOrNull { currentDestination?.hasRoute(it.screenRoute::class) == true }
+                ?.let {
+                    MainNavigationBar(
+                        navItems,
+                        selectedTabIndex,
+                    ) { index, item ->
+                        selectedTabIndex = index
+                        navController.navigate(item.screenRoute) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
+                }
         }
     )
     { innerPadding ->
@@ -89,22 +115,16 @@ internal fun MealsApp(appState: MealsAppState) {
 }
 
 @Composable
-private fun MainNavigationBar(navItems: List<NavItem>, navHostController: NavHostController) {
-    var selectedTabIndex by rememberSaveable { mutableIntStateOf(0) }
+private fun MainNavigationBar(
+    navItems: List<NavItem>,
+    selectedTabIndex: Int,
+    onTabSelected: (Int, NavItem) -> Unit
+) {
     NavigationBar {
         navItems.forEachIndexed { index, item ->
             NavigationBarItem(
                 selected = selectedTabIndex == index,
-                onClick = {
-                    selectedTabIndex = index
-                    navHostController.navigate(item.screenRoute) {
-                        popUpTo(navHostController.graph.findStartDestination().id) {
-                            saveState = true
-                        }
-                        launchSingleTop = true
-                        restoreState = true
-                    }
-                },
+                onClick = { onTabSelected(index, item) },
                 icon = {
                     Icon(
                         imageVector = if (selectedTabIndex == index) item.selectedIcon
@@ -123,9 +143,14 @@ private fun getTitle(destination: NavDestination?): Int? = destination?.let {
         destination.hasRoute<CategoriesListScreenRoute>() -> R.string.categories
         destination.hasRoute<IngredientsListScreenRoute>() -> R.string.ingredients
         destination.hasRoute<MealsListScreenRoute>() -> R.string.meals
+        destination.hasRoute<MealDetailsScreenRoute>() -> R.string.details
         else -> null
     }
 } ?: run { null }
+
+private fun canNavigateBack(destination: NavDestination?): Boolean = destination?.let {
+    destination.hasRoute<MealsListScreenRoute>() || destination.hasRoute<MealDetailsScreenRoute>()
+} ?: run { false }
 
 private data class NavItem(
     @StringRes

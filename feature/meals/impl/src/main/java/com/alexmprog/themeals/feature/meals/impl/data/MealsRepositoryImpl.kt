@@ -9,7 +9,6 @@ import com.alexmprog.themeals.feature.meals.api.domain.MealsSearchSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
@@ -37,33 +36,41 @@ internal class MealsRepositoryImpl(
         .catch { emit(Resource.Error(ErrorType.Network)) }
         .flowOn(dispatcher)
 
-    override fun getMealDetails(id: Int): Flow<Resource<MealDetails>> = emptyFlow()
+    override fun getMealDetails(id: String): Flow<Resource<MealDetails>> = flow {
+        emit(mealsService.getMealDetails(id).meals.first())
+    }.map { Resource.Success(it.toModel()) as Resource<MealDetails> }
+        .catch { emit(Resource.Error(ErrorType.Network)) }
+        .flowOn(dispatcher)
 
 }
 
 internal fun MealDTO.toModel(): Meal = Meal(id, name, image)
 
 internal fun MealDetailsDTO.toModel(): MealDetails {
-    val ingredients = mutableListOf<String>()
-    ingredient1?.let { ingredients.add(it) }
-    ingredient2?.let { ingredients.add(it) }
-    ingredient3?.let { ingredients.add(it) }
-    ingredient4?.let { ingredients.add(it) }
-    ingredient5?.let { ingredients.add(it) }
-    ingredient6?.let { ingredients.add(it) }
-    ingredient7?.let { ingredients.add(it) }
-    ingredient8?.let { ingredients.add(it) }
-    ingredient9?.let { ingredients.add(it) }
-    ingredient10?.let { ingredients.add(it) }
-    ingredient11?.let { ingredients.add(it) }
-    ingredient12?.let { ingredients.add(it) }
-    ingredient13?.let { ingredients.add(it) }
-    ingredient14?.let { ingredients.add(it) }
-    ingredient15?.let { ingredients.add(it) }
-    ingredient16?.let { ingredients.add(it) }
-    ingredient17?.let { ingredients.add(it) }
-    ingredient18?.let { ingredients.add(it) }
-    ingredient19?.let { ingredients.add(it) }
-    ingredient20?.let { ingredients.add(it) }
+    val ingredients = mutableListOf<Pair<String, String>>()
+    val addMeasuredIngredient: (String?, String?) -> Unit = { ingredient, measure ->
+        if (!ingredient.isNullOrEmpty() && !measure.isNullOrEmpty())
+            ingredients.add(Pair(ingredient, measure))
+    }
+    addMeasuredIngredient(ingredient1, measure1)
+    addMeasuredIngredient(ingredient2, measure2)
+    addMeasuredIngredient(ingredient3, measure3)
+    addMeasuredIngredient(ingredient4, measure4)
+    addMeasuredIngredient(ingredient5, measure5)
+    addMeasuredIngredient(ingredient6, measure6)
+    addMeasuredIngredient(ingredient7, measure7)
+    addMeasuredIngredient(ingredient8, measure8)
+    addMeasuredIngredient(ingredient9, measure9)
+    addMeasuredIngredient(ingredient10, measure10)
+    addMeasuredIngredient(ingredient11, measure11)
+    addMeasuredIngredient(ingredient12, measure12)
+    addMeasuredIngredient(ingredient13, measure13)
+    addMeasuredIngredient(ingredient14, measure14)
+    addMeasuredIngredient(ingredient15, measure15)
+    addMeasuredIngredient(ingredient16, measure16)
+    addMeasuredIngredient(ingredient17, measure17)
+    addMeasuredIngredient(ingredient18, measure18)
+    addMeasuredIngredient(ingredient19, measure19)
+    addMeasuredIngredient(ingredient20, measure20)
     return MealDetails(id, category, area, description ?: "", ingredients)
 }

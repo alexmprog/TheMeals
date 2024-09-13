@@ -1,5 +1,6 @@
 package com.alexmprog.themeals.feature.meals.impl.di
 
+import com.alexmprog.themeals.feature.meals.api.domain.GetMealDetailsUseCase
 import com.alexmprog.themeals.feature.meals.api.domain.GetMealsUseCase
 import com.alexmprog.themeals.feature.meals.api.domain.MealsRepository
 import com.alexmprog.themeals.feature.meals.impl.data.MealsService
@@ -19,4 +20,8 @@ class MealsFeatureModule {
     @Factory
     internal fun providesGetMealsUseCase(repository: MealsRepository) =
         GetMealsUseCase(repository)
+
+    @Factory
+    internal fun providesGetMealDetailsUseCase(repository: MealsRepository) =
+        GetMealDetailsUseCase(repository)
 }

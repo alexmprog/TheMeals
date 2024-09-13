@@ -1,4 +1,4 @@
-package com.alexmprog.themeals.feature.meals.impl.presentation
+package com.alexmprog.themeals.feature.meals.impl.presentation.list
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel

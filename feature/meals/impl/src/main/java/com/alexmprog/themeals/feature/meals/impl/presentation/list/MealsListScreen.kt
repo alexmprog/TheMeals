@@ -1,4 +1,4 @@
-package com.alexmprog.themeals.feature.meals.impl.presentation
+package com.alexmprog.themeals.feature.meals.impl.presentation.list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

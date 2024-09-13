@@ -7,5 +7,5 @@ interface MealsRepository {
 
     fun getMealsBySource(id: String, source: MealsSearchSource): Flow<Resource<List<Meal>>>
 
-    fun getMealDetails(id: Int): Flow<Resource<MealDetails>>
+    fun getMealDetails(id: String): Flow<Resource<MealDetails>>
 }
