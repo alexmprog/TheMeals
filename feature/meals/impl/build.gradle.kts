@@ -20,7 +20,7 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.ui)
     implementation(projects.feature.meals.api)
-    implementation(projects.feature.youtube)
+    implementation(projects.feature.youtube.api)
     implementation(libs.androidx.lifecycle.runtime.compose.android)
     implementation(libs.koin.android.compose)
     implementation(libs.compose.navigation)

@@ -36,7 +36,7 @@ dependencies {
     implementation(projects.feature.categories.api)
     implementation(projects.feature.ingredients.api)
     implementation(projects.feature.meals.api)
-    implementation(projects.feature.youtube)
+    implementation(projects.feature.youtube.api)
     implementation(libs.androidx.core.ktx)
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.compose)

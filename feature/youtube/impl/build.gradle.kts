@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.alexmprog.themeals.feature.youtube"
+    namespace = "com.alexmprog.themeals.feature.youtube.impl"
 
     sourceSets {
         getByName("main") {
@@ -16,6 +16,7 @@ android {
 
 dependencies {
     implementation(projects.core.ui)
+    implementation(projects.feature.youtube.api)
     implementation(libs.compose.navigation)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.lifecycle.runtime.compose.android)

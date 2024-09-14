@@ -8,7 +8,7 @@ import com.alexmprog.themeals.feature.meals.api.MealDetailsScreenRoute
 import com.alexmprog.themeals.feature.meals.api.MealsListScreenRoute
 import com.alexmprog.themeals.feature.meals.impl.presentation.details.MealsDetailsScreen
 import com.alexmprog.themeals.feature.meals.impl.presentation.list.MealsListScreen
-import com.alexmprog.themeals.feature.youtube.YoutubeScreenRoute
+import com.alexmprog.themeals.feature.youtube.api.YoutubeScreenRoute
 import org.koin.core.annotation.Named
 import org.koin.core.annotation.Single
 

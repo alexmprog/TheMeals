@@ -1,17 +1,14 @@
-package com.alexmprog.themeals.feature.youtube
+package com.alexmprog.themeals.feature.youtube.impl
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import com.alexmprog.themeals.core.ui.navigation.FeatureNavigation
-import com.alexmprog.themeals.feature.youtube.presentation.YoutubePlayerScreen
-import kotlinx.serialization.Serializable
+import com.alexmprog.themeals.feature.youtube.api.YoutubeScreenRoute
+import com.alexmprog.themeals.feature.youtube.impl.presentation.YoutubePlayerScreen
 import org.koin.core.annotation.Named
 import org.koin.core.annotation.Single
-
-@Serializable
-data class YoutubeScreenRoute(val url: String)
 
 @Single
 @Named("YoutubeNavigation")

@@ -7,7 +7,7 @@ import com.alexmprog.themeals.core.network.di.NetworkModule
 import com.alexmprog.themeals.feature.categories.impl.di.CategoriesFeatureModule
 import com.alexmprog.themeals.feature.ingredients.impl.di.IngredientsFeatureModule
 import com.alexmprog.themeals.feature.meals.impl.di.MealsFeatureModule
-import com.alexmprog.themeals.feature.youtube.di.YoutubeFeatureModule
+import com.alexmprog.themeals.feature.youtube.impl.di.YoutubeFeatureModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
