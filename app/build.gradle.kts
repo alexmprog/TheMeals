@@ -33,6 +33,7 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.ui)
     implementation(projects.inject)
+    implementation(projects.feature.areas.api)
     implementation(projects.feature.categories.api)
     implementation(projects.feature.ingredients.api)
     implementation(projects.feature.meals.api)

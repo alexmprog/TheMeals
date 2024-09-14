@@ -12,7 +12,7 @@ internal interface MealsService {
     suspend fun getMealsByIngredient(@Query("i") ingredient: String): MealsResponse
 
     @GET("filter.php")
-    suspend fun getMealsByArea(@Query("g") area: String): MealsResponse
+    suspend fun getMealsByArea(@Query("a") area: String): MealsResponse
 
     @GET("lookup.php")
     suspend fun getMealDetails(@Query("i") id: String): MealDetailsResponse

@@ -1,4 +1,4 @@
-package com.alexmprog.themeals.core.network
+package com.alexmprog.themeals.feature.areas.impl.data.network
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 internal data class AreasResponse(
     @SerialName("meals")
-    val glasses: List<AreaDTO>
+    val areas: List<AreaDTO>
 )
 
 @Serializable

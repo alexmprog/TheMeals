@@ -2,6 +2,7 @@
     <string name="app_name">TheMeals</string>
     <string name="categories">Categories</string>
     <string name="ingredients">Ingredients</string>
+    <string name="areas">Areas</string>
     <string name="meals">Meals</string>
     <string name="details">Details</string>
     <string name="youtube">Youtube</string>

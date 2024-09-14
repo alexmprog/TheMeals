@@ -8,8 +8,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Place
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -34,6 +36,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.alexmprog.themeals.R
+import com.alexmprog.themeals.feature.area.api.AreasListScreenRoute
 import com.alexmprog.themeals.feature.categories.api.CategoriesListScreenRoute
 import com.alexmprog.themeals.feature.ingredients.api.IngredientsListScreenRoute
 import com.alexmprog.themeals.feature.meals.api.MealDetailsScreenRoute
@@ -56,6 +59,12 @@ internal fun MealsApp(appState: MealsAppState) {
                 screenRoute = IngredientsListScreenRoute,
                 selectedIcon = Icons.Filled.Info,
                 unselectedIcon = Icons.Outlined.Info
+            ),
+            NavItem(
+                titleRes = R.string.areas,
+                screenRoute = AreasListScreenRoute,
+                selectedIcon = Icons.Filled.Place,
+                unselectedIcon = Icons.Outlined.Place
             )
         )
     }
@@ -143,6 +152,7 @@ private fun getTitle(destination: NavDestination?): Int? = destination?.let {
     return when {
         destination.hasRoute<CategoriesListScreenRoute>() -> R.string.categories
         destination.hasRoute<IngredientsListScreenRoute>() -> R.string.ingredients
+        destination.hasRoute<AreasListScreenRoute>() -> R.string.areas
         destination.hasRoute<MealsListScreenRoute>() -> R.string.meals
         destination.hasRoute<MealDetailsScreenRoute>() -> R.string.details
         destination.hasRoute<YoutubeScreenRoute>() -> R.string.youtube

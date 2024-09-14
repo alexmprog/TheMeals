@@ -13,6 +13,7 @@ dependencies {
     implementation(projects.core.database)
     implementation(projects.core.common)
     implementation(projects.core.ui)
+    implementation(projects.feature.areas.impl)
     implementation(projects.feature.categories.impl)
     implementation(projects.feature.ingredients.impl)
     implementation(projects.feature.meals.impl)
