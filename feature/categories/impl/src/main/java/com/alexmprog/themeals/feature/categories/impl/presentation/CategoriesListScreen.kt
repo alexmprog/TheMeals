@@ -17,7 +17,7 @@ import com.alexmprog.thecocktails.core.ui.components.LoadingView
 import com.alexmprog.themeals.core.ui.components.ErrorView
 import com.alexmprog.themeals.core.ui.components.OutlinedTextItem
 import com.alexmprog.themeals.core.ui.state.UiState
-import com.alexmprog.themeals.feature.categories.api.domain.Category
+import com.alexmprog.themeals.feature.categories.api.domain.model.Category
 import org.koin.androidx.compose.koinViewModel
 
 @Composable

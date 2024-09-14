@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.core.ui.state.ErrorText
 import com.alexmprog.themeals.core.ui.state.UiState
-import com.alexmprog.themeals.feature.categories.api.domain.Category
-import com.alexmprog.themeals.feature.categories.api.domain.GetCategoriesUseCase
+import com.alexmprog.themeals.feature.categories.api.domain.model.Category
+import com.alexmprog.themeals.feature.categories.api.domain.usecase.GetCategoriesUseCase
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map

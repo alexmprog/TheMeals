@@ -1,11 +1,14 @@
-package com.alexmprog.themeals.feature.categories.impl.data
+package com.alexmprog.themeals.feature.categories.impl.data.repository
 
+import com.alexmprog.themeals.core.common.dispatcher.CommonIoDispatcher
 import com.alexmprog.themeals.core.common.model.ErrorType
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.core.database.dao.CategoryDao
 import com.alexmprog.themeals.core.database.model.CategoryEntity
-import com.alexmprog.themeals.feature.categories.api.domain.CategoriesRepository
-import com.alexmprog.themeals.feature.categories.api.domain.Category
+import com.alexmprog.themeals.feature.categories.api.data.repository.CategoriesRepository
+import com.alexmprog.themeals.feature.categories.api.domain.model.Category
+import com.alexmprog.themeals.feature.categories.impl.data.network.CategoriesService
+import com.alexmprog.themeals.feature.categories.impl.data.network.CategoryDTO
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -21,7 +24,7 @@ import org.koin.core.annotation.Single
 internal class CategoriesRepositoryImpl(
     private val categoryDao: CategoryDao,
     private val categoriesService: CategoriesService,
-    @Named("IoDispatcher") private val dispatcher: CoroutineDispatcher
+    @Named(CommonIoDispatcher) private val dispatcher: CoroutineDispatcher
 ) : CategoriesRepository {
 
     override fun getCategories(): Flow<Resource<List<Category>>> = flow {

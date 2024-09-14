@@ -7,15 +7,18 @@ import org.koin.core.annotation.Module
 import org.koin.core.annotation.Named
 import org.koin.core.annotation.Single
 
+const val CommonIoDispatcher = "IoDispatcher"
+private const val CommonDefaultDispatcher = "DefaultDispatcher"
+
 @Module
 @ComponentScan
 class DispatchersModule {
 
     @Single
-    @Named("IoDispatcher")
+    @Named(CommonIoDispatcher)
     internal fun providesIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
 
     @Single
-    @Named("DefaultDispatcher")
+    @Named(CommonDefaultDispatcher)
     internal fun providesDefaultDispatcher(): CoroutineDispatcher = Dispatchers.Default
 }

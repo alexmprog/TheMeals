@@ -1,4 +1,4 @@
-package com.alexmprog.themeals.feature.categories.impl.data
+package com.alexmprog.themeals.feature.categories.impl.data.network
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
