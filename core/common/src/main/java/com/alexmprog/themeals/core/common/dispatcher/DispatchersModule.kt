@@ -8,7 +8,7 @@ import org.koin.core.annotation.Named
 import org.koin.core.annotation.Single
 
 const val CommonIoDispatcher = "IoDispatcher"
-private const val CommonDefaultDispatcher = "DefaultDispatcher"
+const val CommonDefaultDispatcher = "DefaultDispatcher"
 
 @Module
 @ComponentScan

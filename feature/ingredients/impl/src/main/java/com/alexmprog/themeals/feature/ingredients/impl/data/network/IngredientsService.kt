@@ -1,4 +1,4 @@
-package com.alexmprog.themeals.feature.ingredients.impl.data
+package com.alexmprog.themeals.feature.ingredients.impl.data.network
 
 import retrofit2.http.GET
 

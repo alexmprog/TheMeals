@@ -1,4 +1,4 @@
-package com.alexmprog.themeals.feature.ingredients.api.domain
+package com.alexmprog.themeals.feature.ingredients.api.domain.model
 
 data class Ingredient(
     val name: String,

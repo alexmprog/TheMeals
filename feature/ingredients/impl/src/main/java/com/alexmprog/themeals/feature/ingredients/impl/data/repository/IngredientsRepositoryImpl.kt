@@ -1,11 +1,14 @@
-package com.alexmprog.themeals.feature.ingredients.impl.data
+package com.alexmprog.themeals.feature.ingredients.impl.data.repository
 
+import com.alexmprog.themeals.core.common.dispatcher.CommonIoDispatcher
 import com.alexmprog.themeals.core.common.model.ErrorType
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.core.database.dao.IngredientDao
 import com.alexmprog.themeals.core.database.model.IngredientEntity
-import com.alexmprog.themeals.feature.ingredients.api.domain.Ingredient
-import com.alexmprog.themeals.feature.ingredients.api.domain.IngredientsRepository
+import com.alexmprog.themeals.feature.ingredients.api.domain.model.Ingredient
+import com.alexmprog.themeals.feature.ingredients.api.data.repository.IngredientsRepository
+import com.alexmprog.themeals.feature.ingredients.impl.data.network.IngredientDTO
+import com.alexmprog.themeals.feature.ingredients.impl.data.network.IngredientsService
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -21,7 +24,7 @@ import org.koin.core.annotation.Single
 internal class IngredientsRepositoryImpl(
     private val ingredientDao: IngredientDao,
     private val ingredientsService: IngredientsService,
-    @Named("IoDispatcher") private val dispatcher: CoroutineDispatcher
+    @Named(CommonIoDispatcher) private val dispatcher: CoroutineDispatcher
 ) : IngredientsRepository {
 
     override fun getIngredients(): Flow<Resource<List<Ingredient>>> = flow {

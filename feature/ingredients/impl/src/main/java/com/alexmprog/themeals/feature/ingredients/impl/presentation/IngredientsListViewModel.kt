@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.core.ui.state.ErrorText
 import com.alexmprog.themeals.core.ui.state.UiState
-import com.alexmprog.themeals.feature.ingredients.api.domain.GetIngredientsUseCase
-import com.alexmprog.themeals.feature.ingredients.api.domain.Ingredient
+import com.alexmprog.themeals.feature.ingredients.api.domain.usecase.GetIngredientsUseCase
+import com.alexmprog.themeals.feature.ingredients.api.domain.model.Ingredient
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
