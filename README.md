@@ -13,8 +13,7 @@ It simply loads data from API and stores it in persistence storage (i.e. SQLite 
 ## Built With 🛠
 [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.<br>
 [Kotlin Gradle DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) - Provides an alternative syntax to the traditional Groovy DSL for Gradle build system. <br>
-[Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - For asynchronous and more..<br>
-[Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/) - A cold asynchronous data stream .<br>
+[Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - Kotlin Asynchronous or non-blocking programming.<br>
 [Compose](https://developer.android.com/develop/ui/compose/documentation) - The modern toolkit for building native Android UI.<br>
 [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Stores UI-related data that isn't destroyed on UI changes.<br>
 [Jetpack Navigation](https://developer.android.com/guide/navigation) - Component helps you implement navigation.<br>
@@ -29,8 +28,9 @@ It simply loads data from API and stores it in persistence storage (i.e. SQLite 
 The project is divided into several modules:
 - :app:mobile - Android app module for phone devices.
 - :build:logic:convention - Conventions plugins for managing build configurations.
+- :inject - Android library with common DI graph setup.
 - :core:common - Kotlin-only module containing utility functions (not an Android library).
-- :core:databae - Android library with common Room database.
+- :core:database - Android library with common Room database.
 - :core:network - Android library with common Retrofit/Okttp network configs.
 - :core:ui - Android library with common Jetpack Compose UI widgets and FeatureNavigation interface.
 - :feature:categories:api - Android library with categories feature api.
