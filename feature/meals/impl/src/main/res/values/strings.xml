@@ -3,7 +3,7 @@
     <string name="feature_meals_impl_name">Name:</string>
     <string name="feature_meals_impl_category">Category:</string>
     <string name="feature_meals_impl_area">Area:</string>
-    <string name="feature_meals_impl_ingredients">Ingredients/Measures:</string>
+    <string name="feature_meals_impl_ingredients">Measured Ingredients:</string>
     <string name="feature_meals_impl_instructions">Instructions:</string>
     <string name="feature_meals_impl_youtube">See video on Youtube:</string>
 </resources>

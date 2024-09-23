@@ -35,6 +35,7 @@ activity = "1.9.2"
 material = "1.12.0"
 junitVersion = "1.2.1"
 youtubePlayerVersion = "12.1.0"
+graph = "0.10.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -102,6 +103,8 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 room = { id = "androidx.room", version.ref = "room" }
+graph = {id = "dev.iurysouza.modulegraph" , version.ref = "graph" }
+
 # Converntion plugins from build-logic
 convention-jvm-library = { id = "convention.jvm.library", version = "unspecified" }
 convention-android-library = { id = "convention.android.library", version = "unspecified" }

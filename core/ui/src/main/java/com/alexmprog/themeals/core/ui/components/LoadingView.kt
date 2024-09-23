@@ -1,4 +1,4 @@
-package com.alexmprog.thecocktails.core.ui.components
+package com.alexmprog.themeals.core.ui.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
