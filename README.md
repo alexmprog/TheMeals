@@ -1,11 +1,10 @@
 # TheMeals
 
-![GitHub Logo](/screenshots/meals_app_flow.gif)
+![GitHub Logo](/screenshots/app_flow.gif)
 
 ## About
-It simply loads data from API and stores it in persistence storage (i.e. SQLite Database). Data will be always loaded from local database. Remote data (from API) and Local data is always synchronized.
+It simply loads data from API and stores it in persistence storage (i.e. SQLite Database).
 * User real [TheMealDB](https://www.themealdb.com/) api.<br>
-* This makes it offline capable.<br>
 * Clean and Simple Material UI.<br>
 * Use convention plugins.<br>
 * Use multi-module Gradle architecture.<br>
@@ -19,9 +18,9 @@ It simply loads data from API and stores it in persistence storage (i.e. SQLite 
 [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Stores UI-related data that isn't destroyed on UI changes.<br>
 [Jetpack Navigation](https://developer.android.com/guide/navigation) - Component helps you implement navigation.<br>
 [Room](https://developer.android.com/topic/libraries/architecture/room) - SQLite object mapping library.<br>
-[Koin]([https://dagger.dev/](https://insert-koin.io) - The pragmatic Kotlin Dependency Injection framework.<br>
+[Koin](https://insert-koin.io) - The pragmatic Kotlin Dependency Injection framework.<br>
 [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client for Android and Java.<br>
-[Kotlin Serialization]([https://github.com/square/moshi](https://kotlinlang.org/docs/serialization.html)) - A modern JSON library for Kotlin and Java.<br>
+[Kotlin Serialization](https://kotlinlang.org/docs/serialization.html) - A modern JSON library for Kotlin and Java.<br>
 [MockWebServer](https://github.com/square/okhttp/tree/master/mockwebserver) - A scriptable web server for testing HTTP clients.<br>
 [Testing](https://developer.android.com/training/testing) - App contains different kinds of tests: Local Unit, Integration, UI, End2End tests.<br>
 ## Module Graph
@@ -132,6 +131,5 @@ class :feature:categories:api android-library
 
 ```
 ## Architecture
-This app uses [Clean architecture](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) and [MVVM](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) for Presentation level.
-![Image of Clean architecture](https://habrastorage.org/web/986/9db/e34/9869dbe34b5649e28be40bff6bee3147.png)
-![Image of MVVM](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
+This repository uses recommended Android [App architecture](https://developer.android.com/topic/architecture).
+![Image of Clean Architecture](https://developer.android.com/static/topic/libraries/architecture/images/mad-arch-overview.png)
