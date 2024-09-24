@@ -30,8 +30,8 @@ import coil.request.ImageRequest
 import com.alexmprog.themeals.core.ui.components.LoadingView
 import com.alexmprog.themeals.core.ui.components.ErrorView
 import com.alexmprog.themeals.core.ui.state.UiState
-import com.alexmprog.themeals.feature.meals.api.domain.Meal
-import com.alexmprog.themeals.feature.meals.api.domain.MealDetails
+import com.alexmprog.themeals.feature.meals.api.domain.model.Meal
+import com.alexmprog.themeals.feature.meals.api.domain.model.MealDetails
 import com.alexmprog.themeals.feature.meals.impl.R
 import org.koin.androidx.compose.koinViewModel
 

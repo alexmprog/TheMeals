@@ -1,4 +1,4 @@
-package com.alexmprog.themeals.feature.meals.api.domain
+package com.alexmprog.themeals.feature.meals.api.domain.model
 
 data class Meal(
     val id: String,

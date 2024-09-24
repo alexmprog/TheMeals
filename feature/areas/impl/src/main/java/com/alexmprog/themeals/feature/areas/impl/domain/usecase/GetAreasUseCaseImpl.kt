@@ -1,6 +1,6 @@
 package com.alexmprog.themeals.feature.areas.impl.domain.usecase
 
-import com.alexmprog.themeals.feature.area.api.data.repository.AreasRepository
+import com.alexmprog.themeals.feature.area.api.domain.repository.AreasRepository
 import com.alexmprog.themeals.feature.area.api.domain.model.Area
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.feature.area.api.domain.usecase.GetAreasUseCase

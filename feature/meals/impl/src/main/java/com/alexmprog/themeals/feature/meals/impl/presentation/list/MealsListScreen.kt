@@ -28,7 +28,7 @@ import coil.request.ImageRequest
 import com.alexmprog.themeals.core.ui.components.LoadingView
 import com.alexmprog.themeals.core.ui.components.ErrorView
 import com.alexmprog.themeals.core.ui.state.UiState
-import com.alexmprog.themeals.feature.meals.api.domain.Meal
+import com.alexmprog.themeals.feature.meals.api.domain.model.Meal
 import org.koin.androidx.compose.koinViewModel
 
 @Composable

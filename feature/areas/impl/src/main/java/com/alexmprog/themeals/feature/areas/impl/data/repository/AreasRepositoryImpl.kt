@@ -2,7 +2,7 @@ package com.alexmprog.themeals.feature.areas.impl.data.repository
 
 import com.alexmprog.themeals.core.database.dao.AreaDao
 import com.alexmprog.themeals.core.database.model.AreaEntity
-import com.alexmprog.themeals.feature.area.api.data.repository.AreasRepository
+import com.alexmprog.themeals.feature.area.api.domain.repository.AreasRepository
 import com.alexmprog.themeals.feature.area.api.domain.model.Area
 import com.alexmprog.themeals.feature.areas.impl.data.network.AreaDTO
 import com.alexmprog.themeals.feature.areas.impl.data.network.AreasService

@@ -8,8 +8,8 @@ import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.core.ui.state.ErrorText
 import com.alexmprog.themeals.core.ui.state.UiState
 import com.alexmprog.themeals.feature.meals.api.MealsListScreenRoute
-import com.alexmprog.themeals.feature.meals.api.domain.GetMealsUseCase
-import com.alexmprog.themeals.feature.meals.api.domain.Meal
+import com.alexmprog.themeals.feature.meals.api.domain.usecase.GetMealsUseCase
+import com.alexmprog.themeals.feature.meals.api.domain.model.Meal
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map

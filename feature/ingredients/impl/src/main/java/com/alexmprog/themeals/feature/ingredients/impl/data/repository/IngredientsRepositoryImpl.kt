@@ -6,7 +6,7 @@ import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.core.database.dao.IngredientDao
 import com.alexmprog.themeals.core.database.model.IngredientEntity
 import com.alexmprog.themeals.feature.ingredients.api.domain.model.Ingredient
-import com.alexmprog.themeals.feature.ingredients.api.data.repository.IngredientsRepository
+import com.alexmprog.themeals.feature.ingredients.api.domain.repository.IngredientsRepository
 import com.alexmprog.themeals.feature.ingredients.impl.data.network.IngredientDTO
 import com.alexmprog.themeals.feature.ingredients.impl.data.network.IngredientsService
 import kotlinx.coroutines.CoroutineDispatcher

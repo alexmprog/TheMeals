@@ -7,7 +7,7 @@ import com.alexmprog.themeals.core.ui.navigation.FeatureNavigation
 import com.alexmprog.themeals.feature.categories.api.CategoriesListScreenRoute
 import com.alexmprog.themeals.feature.categories.impl.presentation.CategoriesListScreen
 import com.alexmprog.themeals.feature.meals.api.MealsListScreenRoute
-import com.alexmprog.themeals.feature.meals.api.domain.MealsSearchSource
+import com.alexmprog.themeals.feature.meals.api.domain.model.MealsSearchSource
 import org.koin.core.annotation.Named
 import org.koin.core.annotation.Single
 

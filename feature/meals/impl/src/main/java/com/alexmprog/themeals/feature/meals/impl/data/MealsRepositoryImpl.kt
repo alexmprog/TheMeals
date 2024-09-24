@@ -2,10 +2,10 @@ package com.alexmprog.themeals.feature.meals.impl.data
 
 import com.alexmprog.themeals.core.common.model.ErrorType
 import com.alexmprog.themeals.core.common.model.Resource
-import com.alexmprog.themeals.feature.meals.api.domain.Meal
-import com.alexmprog.themeals.feature.meals.api.domain.MealDetails
-import com.alexmprog.themeals.feature.meals.api.domain.MealsRepository
-import com.alexmprog.themeals.feature.meals.api.domain.MealsSearchSource
+import com.alexmprog.themeals.feature.meals.api.domain.model.Meal
+import com.alexmprog.themeals.feature.meals.api.domain.model.MealDetails
+import com.alexmprog.themeals.feature.meals.api.domain.repository.MealsRepository
+import com.alexmprog.themeals.feature.meals.api.domain.model.MealsSearchSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

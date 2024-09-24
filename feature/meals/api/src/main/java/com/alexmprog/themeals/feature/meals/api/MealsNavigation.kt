@@ -1,6 +1,6 @@
 package com.alexmprog.themeals.feature.meals.api
 
-import com.alexmprog.themeals.feature.meals.api.domain.MealsSearchSource
+import com.alexmprog.themeals.feature.meals.api.domain.model.MealsSearchSource
 import kotlinx.serialization.Serializable
 
 @Serializable

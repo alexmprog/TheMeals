@@ -5,7 +5,7 @@ import com.alexmprog.themeals.core.common.model.ErrorType
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.core.database.dao.CategoryDao
 import com.alexmprog.themeals.core.database.model.CategoryEntity
-import com.alexmprog.themeals.feature.categories.api.data.repository.CategoriesRepository
+import com.alexmprog.themeals.feature.categories.api.domain.repository.CategoriesRepository
 import com.alexmprog.themeals.feature.categories.api.domain.model.Category
 import com.alexmprog.themeals.feature.categories.impl.data.network.CategoriesService
 import com.alexmprog.themeals.feature.categories.impl.data.network.CategoryDTO
