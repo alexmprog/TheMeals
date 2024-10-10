@@ -12,17 +12,17 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.alexmprog.themeals.core.ui.components.LoadingView
 import com.alexmprog.themeals.core.ui.components.ErrorView
 import com.alexmprog.themeals.core.ui.components.OutlinedTextItem
 import com.alexmprog.themeals.core.ui.state.UiState
 import com.alexmprog.themeals.feature.categories.api.domain.model.Category
-import org.koin.androidx.compose.koinViewModel
 
 @Composable
 internal fun CategoriesListScreen(
-    viewModel: CategoriesListViewModel = koinViewModel(),
+    viewModel: CategoriesListViewModel = hiltViewModel(),
     modifier: Modifier = Modifier,
     onCategoryClick: (Category) -> Unit
 ) {

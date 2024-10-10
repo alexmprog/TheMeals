@@ -1,6 +1,7 @@
 package com.alexmprog.themeals.feature.categories.impl.data.repository
 
-import com.alexmprog.themeals.core.common.dispatcher.CommonIoDispatcher
+import com.alexmprog.themeals.core.common.dispatcher.CommonDispatchers
+import com.alexmprog.themeals.core.common.dispatcher.Dispatcher
 import com.alexmprog.themeals.core.common.model.ErrorType
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.core.database.dao.CategoryDao
@@ -17,14 +18,12 @@ import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
-import org.koin.core.annotation.Named
-import org.koin.core.annotation.Single
+import javax.inject.Inject
 
-@Single
-internal class CategoriesRepositoryImpl(
+internal class CategoriesRepositoryImpl @Inject constructor(
     private val categoryDao: CategoryDao,
     private val categoriesService: CategoriesService,
-    @Named(CommonIoDispatcher) private val dispatcher: CoroutineDispatcher
+    @Dispatcher(CommonDispatchers.IO) private val dispatcher: CoroutineDispatcher
 ) : CategoriesRepository {
 
     override fun getCategories(): Flow<Resource<List<Category>>> = flow {

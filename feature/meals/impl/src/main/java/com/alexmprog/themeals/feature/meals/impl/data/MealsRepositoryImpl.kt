@@ -1,5 +1,7 @@
 package com.alexmprog.themeals.feature.meals.impl.data
 
+import com.alexmprog.themeals.core.common.dispatcher.CommonDispatchers
+import com.alexmprog.themeals.core.common.dispatcher.Dispatcher
 import com.alexmprog.themeals.core.common.model.ErrorType
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.feature.meals.api.domain.model.Meal
@@ -12,13 +14,11 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
-import org.koin.core.annotation.Named
-import org.koin.core.annotation.Single
+import javax.inject.Inject
 
-@Single
-internal class MealsRepositoryImpl(
+internal class MealsRepositoryImpl @Inject constructor(
     private val mealsService: MealsService,
-    @Named("IoDispatcher") private val dispatcher: CoroutineDispatcher
+    @Dispatcher(CommonDispatchers.IO) private val dispatcher: CoroutineDispatcher
 ) : MealsRepository {
 
     override fun getMealsBySource(

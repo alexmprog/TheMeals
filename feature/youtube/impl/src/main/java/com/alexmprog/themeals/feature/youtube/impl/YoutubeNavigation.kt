@@ -7,12 +7,9 @@ import androidx.navigation.toRoute
 import com.alexmprog.themeals.core.ui.navigation.FeatureNavigation
 import com.alexmprog.themeals.feature.youtube.api.YoutubeScreenRoute
 import com.alexmprog.themeals.feature.youtube.impl.presentation.YoutubePlayerScreen
-import org.koin.core.annotation.Named
-import org.koin.core.annotation.Single
+import javax.inject.Inject
 
-@Single
-@Named("YoutubeNavigation")
-class YoutubeNavigation : FeatureNavigation {
+internal class YoutubeNavigation @Inject constructor() : FeatureNavigation {
 
     override fun registerGraph(graphBuilder: NavGraphBuilder, navController: NavHostController) =
         with(graphBuilder) {

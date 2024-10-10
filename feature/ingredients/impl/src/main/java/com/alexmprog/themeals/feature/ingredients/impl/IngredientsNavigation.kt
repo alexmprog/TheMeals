@@ -8,12 +8,9 @@ import com.alexmprog.themeals.feature.ingredients.api.IngredientsListScreenRoute
 import com.alexmprog.themeals.feature.ingredients.impl.presentation.IngredientsListScreen
 import com.alexmprog.themeals.feature.meals.api.MealsListScreenRoute
 import com.alexmprog.themeals.feature.meals.api.domain.model.MealsSearchSource
-import org.koin.core.annotation.Named
-import org.koin.core.annotation.Single
+import javax.inject.Inject
 
-@Single
-@Named("IngredientsNavigation")
-class IngredientsNavigation : FeatureNavigation {
+internal class IngredientsNavigation @Inject constructor() : FeatureNavigation {
 
     override fun registerGraph(graphBuilder: NavGraphBuilder, navController: NavHostController) =
         with(graphBuilder) {

@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.convention.android.application.compose)
-    alias(libs.plugins.convention.koin)
+    alias(libs.plugins.convention.hilt)
     alias(libs.plugins.convention.serialization)
 }
 
@@ -47,8 +47,8 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.compose)
-    implementation(libs.koin.core)
-    implementation(libs.koin.android.compose)
+    implementation(libs.compose.navigation)
+    implementation(libs.compose.hilt.navigation)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.activity.compose)

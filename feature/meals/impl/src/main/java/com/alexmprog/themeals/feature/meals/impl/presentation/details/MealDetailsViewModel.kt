@@ -11,14 +11,14 @@ import com.alexmprog.themeals.feature.meals.api.MealDetailsScreenRoute
 import com.alexmprog.themeals.feature.meals.api.domain.usecase.GetMealDetailsUseCase
 import com.alexmprog.themeals.feature.meals.api.domain.model.Meal
 import com.alexmprog.themeals.feature.meals.api.domain.model.MealDetails
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import org.koin.android.annotation.KoinViewModel
 
-@KoinViewModel
+@HiltViewModel
 internal class MealDetailsViewModel (
     savedStateHandle: SavedStateHandle,
     getMealDetailsUseCase: GetMealDetailsUseCase

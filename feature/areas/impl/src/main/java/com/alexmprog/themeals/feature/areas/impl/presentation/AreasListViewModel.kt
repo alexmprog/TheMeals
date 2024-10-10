@@ -7,14 +7,15 @@ import com.alexmprog.themeals.core.ui.state.ErrorText
 import com.alexmprog.themeals.core.ui.state.UiState
 import com.alexmprog.themeals.feature.area.api.domain.model.Area
 import com.alexmprog.themeals.feature.area.api.domain.usecase.GetAreasUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import org.koin.android.annotation.KoinViewModel
+import javax.inject.Inject
 
-@KoinViewModel
-internal class AreasListViewModel (getAreasUseCase: GetAreasUseCase) : ViewModel() {
+@HiltViewModel
+internal class AreasListViewModel @Inject constructor(getAreasUseCase: GetAreasUseCase) : ViewModel() {
 
     val uiState: StateFlow<UiState<List<Area>>> = getAreasUseCase()
         .map {

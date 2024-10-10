@@ -9,12 +9,9 @@ import com.alexmprog.themeals.feature.meals.api.MealsListScreenRoute
 import com.alexmprog.themeals.feature.meals.impl.presentation.details.MealsDetailsScreen
 import com.alexmprog.themeals.feature.meals.impl.presentation.list.MealsListScreen
 import com.alexmprog.themeals.feature.youtube.api.YoutubeScreenRoute
-import org.koin.core.annotation.Named
-import org.koin.core.annotation.Single
+import javax.inject.Inject
 
-@Single
-@Named("MealsNavigation")
-class MealsNavigation : FeatureNavigation {
+internal class MealsNavigation @Inject constructor() : FeatureNavigation {
 
     override fun registerGraph(graphBuilder: NavGraphBuilder, navController: NavHostController) =
         with(graphBuilder) {

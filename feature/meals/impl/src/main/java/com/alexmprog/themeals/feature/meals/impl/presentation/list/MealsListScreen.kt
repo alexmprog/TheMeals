@@ -22,6 +22,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -29,11 +30,10 @@ import com.alexmprog.themeals.core.ui.components.LoadingView
 import com.alexmprog.themeals.core.ui.components.ErrorView
 import com.alexmprog.themeals.core.ui.state.UiState
 import com.alexmprog.themeals.feature.meals.api.domain.model.Meal
-import org.koin.androidx.compose.koinViewModel
 
 @Composable
 internal fun MealsListScreen(
-    viewModel: MealsListViewModel = koinViewModel(),
+    viewModel: MealsListViewModel = hiltViewModel(),
     modifier: Modifier = Modifier,
     onMealClick: (Meal) -> Unit
 ) {

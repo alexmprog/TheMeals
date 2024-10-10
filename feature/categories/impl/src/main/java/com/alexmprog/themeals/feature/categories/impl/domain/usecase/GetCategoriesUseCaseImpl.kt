@@ -5,10 +5,9 @@ import com.alexmprog.themeals.feature.categories.api.domain.repository.Categorie
 import com.alexmprog.themeals.feature.categories.api.domain.model.Category
 import com.alexmprog.themeals.feature.categories.api.domain.usecase.GetCategoriesUseCase
 import kotlinx.coroutines.flow.Flow
-import org.koin.core.annotation.Factory
+import javax.inject.Inject
 
-@Factory
-internal class GetCategoriesUseCaseImpl(
+internal class GetCategoriesUseCaseImpl @Inject constructor(
     private val categoriesRepository: CategoriesRepository
 ) : GetCategoriesUseCase {
     override operator fun invoke(): Flow<Resource<List<Category>>> =

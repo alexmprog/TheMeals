@@ -1,16 +1,27 @@
 package com.alexmprog.themeals.feature.categories.impl.di
 
+import com.alexmprog.themeals.feature.categories.api.domain.repository.CategoriesRepository
 import com.alexmprog.themeals.feature.categories.impl.data.network.CategoriesService
-import org.koin.core.annotation.ComponentScan
-import org.koin.core.annotation.Factory
-import org.koin.core.annotation.Module
+import com.alexmprog.themeals.feature.categories.impl.data.repository.CategoriesRepositoryImpl
+import dagger.Binds
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import javax.inject.Singleton
 
 @Module
-@ComponentScan("com.alexmprog.themeals.feature.categories.impl")
-class CategoriesFeatureModule {
+@InstallIn(SingletonComponent::class)
+abstract class CategoriesFeatureModule {
 
-    @Factory
+    @Binds
+    @Singleton
+    internal abstract fun bindsCategoriesRepository(
+        categoriesRepository: CategoriesRepositoryImpl
+    ): CategoriesRepository
+
+    @Provides
     internal fun providesCategoriesService(retrofit: Retrofit) =
         retrofit.create(CategoriesService::class.java)
 }

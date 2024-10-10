@@ -6,10 +6,9 @@ import com.alexmprog.themeals.feature.meals.api.domain.model.MealsSearchSource
 import com.alexmprog.themeals.feature.meals.api.domain.repository.MealsRepository
 import com.alexmprog.themeals.feature.meals.api.domain.usecase.GetMealsUseCase
 import kotlinx.coroutines.flow.Flow
-import org.koin.core.annotation.Factory
+import javax.inject.Inject
 
-@Factory
-class GetMealsUseCaseImpl(private val mealsRepository: MealsRepository) : GetMealsUseCase {
+internal class GetMealsUseCaseImpl @Inject constructor(private val mealsRepository: MealsRepository) : GetMealsUseCase {
     override operator fun invoke(
         id: String,
         source: MealsSearchSource

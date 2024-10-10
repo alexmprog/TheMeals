@@ -8,12 +8,9 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.alexmprog.themeals.core.ui.navigation.FeatureNavigation
-import org.koin.core.annotation.Named
-import org.koin.core.annotation.Single
+import javax.inject.Inject
 
-@Single
-@Named("AreasNavigation")
-class AreasNavigation : FeatureNavigation {
+internal class AreasNavigation @Inject constructor() : FeatureNavigation {
 
     override fun registerGraph(graphBuilder: NavGraphBuilder, navController: NavHostController) =
         with(graphBuilder) {

@@ -5,10 +5,9 @@ import com.alexmprog.themeals.feature.meals.api.domain.model.MealDetails
 import com.alexmprog.themeals.feature.meals.api.domain.repository.MealsRepository
 import com.alexmprog.themeals.feature.meals.api.domain.usecase.GetMealDetailsUseCase
 import kotlinx.coroutines.flow.Flow
-import org.koin.core.annotation.Factory
+import javax.inject.Inject
 
-@Factory
-class GetMealDetailsUseCaseImpl(private val mealsRepository: MealsRepository) :
+internal class GetMealDetailsUseCaseImpl @Inject constructor(private val mealsRepository: MealsRepository) :
     GetMealDetailsUseCase {
     override operator fun invoke(id: String): Flow<Resource<MealDetails>> =
         mealsRepository.getMealDetails(id)

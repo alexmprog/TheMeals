@@ -6,30 +6,32 @@ import com.alexmprog.themeals.core.database.MealsDatabase
 import com.alexmprog.themeals.core.database.dao.AreaDao
 import com.alexmprog.themeals.core.database.dao.CategoryDao
 import com.alexmprog.themeals.core.database.dao.IngredientDao
-import org.koin.core.annotation.ComponentScan
-import org.koin.core.annotation.Factory
-import org.koin.core.annotation.Module
-import org.koin.core.annotation.Singleton
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
-@ComponentScan
-class DatabaseModule {
+@InstallIn(SingletonComponent::class)
+internal object DatabaseModule {
 
+    @Provides
     @Singleton
-    internal fun providesMealsDatabase(context: Context): MealsDatabase =
+    fun providesMealsDatabase(context: Context): MealsDatabase =
         Room.databaseBuilder(
             context,
             MealsDatabase::class.java,
             "meals-database",
         ).build()
 
-    @Factory
-    internal fun providesCategoryDao(database: MealsDatabase): CategoryDao = database.categoryDao()
+    @Provides
+    fun providesCategoryDao(database: MealsDatabase): CategoryDao = database.categoryDao()
 
-    @Factory
-    internal fun providesIngredientDao(database: MealsDatabase): IngredientDao =
+    @Provides
+    fun providesIngredientDao(database: MealsDatabase): IngredientDao =
         database.ingredientDao()
 
-    @Factory
-    internal fun providesGlassDao(database: MealsDatabase): AreaDao = database.areaDao()
+    @Provides
+    fun providesAreaDao(database: MealsDatabase): AreaDao = database.areaDao()
 }

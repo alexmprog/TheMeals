@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.convention.android.library)
-    alias(libs.plugins.convention.koin)
+    alias(libs.plugins.convention.hilt)
     alias(libs.plugins.convention.serialization)
 }
 

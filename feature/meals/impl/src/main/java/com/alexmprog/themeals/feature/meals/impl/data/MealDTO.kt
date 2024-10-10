@@ -1,9 +1,7 @@
 package com.alexmprog.themeals.feature.meals.impl.data
 
-import kotlinx.serialization.SerialInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.Serializer
 
 @Serializable
 internal data class MealsResponse(

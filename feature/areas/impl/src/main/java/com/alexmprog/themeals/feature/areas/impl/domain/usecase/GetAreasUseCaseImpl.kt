@@ -5,10 +5,9 @@ import com.alexmprog.themeals.feature.area.api.domain.model.Area
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.feature.area.api.domain.usecase.GetAreasUseCase
 import kotlinx.coroutines.flow.Flow
-import org.koin.core.annotation.Factory
+import javax.inject.Inject
 
-@Factory
-internal class GetAreasUseCaseImpl(
+internal class GetAreasUseCaseImpl @Inject constructor(
     private val areasRepository: AreasRepository
 ) : GetAreasUseCase {
 

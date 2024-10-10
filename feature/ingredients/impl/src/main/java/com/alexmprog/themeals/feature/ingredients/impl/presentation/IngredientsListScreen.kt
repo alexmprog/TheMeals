@@ -10,17 +10,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.alexmprog.themeals.core.ui.components.LoadingView
 import com.alexmprog.themeals.core.ui.components.ErrorView
 import com.alexmprog.themeals.core.ui.components.OutlinedTextItem
 import com.alexmprog.themeals.core.ui.state.UiState
 import com.alexmprog.themeals.feature.ingredients.api.domain.model.Ingredient
-import org.koin.androidx.compose.koinViewModel
 
 @Composable
 internal fun IngredientsListScreen(
-    viewModel: IngredientsListViewModel = koinViewModel(),
+    viewModel: IngredientsListViewModel = hiltViewModel(),
     modifier: Modifier = Modifier,
     onIngredientClick: (Ingredient) -> Unit
 ) {

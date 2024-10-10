@@ -24,6 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -33,11 +34,10 @@ import com.alexmprog.themeals.core.ui.state.UiState
 import com.alexmprog.themeals.feature.meals.api.domain.model.Meal
 import com.alexmprog.themeals.feature.meals.api.domain.model.MealDetails
 import com.alexmprog.themeals.feature.meals.impl.R
-import org.koin.androidx.compose.koinViewModel
 
 @Composable
 internal fun MealsDetailsScreen(
-    viewModel: MealDetailsViewModel = koinViewModel(),
+    viewModel: MealDetailsViewModel = hiltViewModel(),
     modifier: Modifier = Modifier,
     onYoutubeClick: (String) -> Unit
 ) {

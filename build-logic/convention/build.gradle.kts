@@ -50,9 +50,9 @@ gradlePlugin {
             id = "convention.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
-        register("koin") {
-            id = "convention.koin"
-            implementationClass = "KoinConventionPlugin"
+        register("hilt") {
+            id = "convention.hilt"
+            implementationClass = "HiltConventionPlugin"
         }
         register("serialization") {
             id = "convention.serialization"

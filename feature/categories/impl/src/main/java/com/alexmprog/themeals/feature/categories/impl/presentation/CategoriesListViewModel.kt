@@ -7,13 +7,13 @@ import com.alexmprog.themeals.core.ui.state.ErrorText
 import com.alexmprog.themeals.core.ui.state.UiState
 import com.alexmprog.themeals.feature.categories.api.domain.model.Category
 import com.alexmprog.themeals.feature.categories.api.domain.usecase.GetCategoriesUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import org.koin.android.annotation.KoinViewModel
 
-@KoinViewModel
+@HiltViewModel
 internal class CategoriesListViewModel (
     getCategoriesUseCase: GetCategoriesUseCase
 ) : ViewModel() {
