@@ -15,7 +15,7 @@ import org.koin.core.annotation.Single
 @Named("IngredientsNavigation")
 class IngredientsNavigation : FeatureNavigation {
 
-    override fun build(graphBuilder: NavGraphBuilder, navController: NavHostController) =
+    override fun registerGraph(graphBuilder: NavGraphBuilder, navController: NavHostController) =
         with(graphBuilder) {
             composable<IngredientsListScreenRoute> {
                 IngredientsListScreen(onIngredientClick = {

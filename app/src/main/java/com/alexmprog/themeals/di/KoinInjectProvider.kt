@@ -1,4 +1,4 @@
-package com.alexmprog.themeals.inject
+package com.alexmprog.themeals.di
 
 import androidx.compose.runtime.Composable
 import com.alexmprog.themeals.core.ui.navigation.FeatureNavigation

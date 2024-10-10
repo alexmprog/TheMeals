@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.alexmprog.themeals.core.ui.navigation.FeatureNavigation
 import com.alexmprog.themeals.core.ui.theme.TheMealsTheme
-import com.alexmprog.themeals.inject.KoinInjectProvider
+import com.alexmprog.themeals.di.KoinInjectProvider
 import com.alexmprog.themeals.ui.MealsApp
 import com.alexmprog.themeals.ui.rememberMealsAppState
 

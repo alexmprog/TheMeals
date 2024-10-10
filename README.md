@@ -45,8 +45,8 @@ graph TB
     :feature:areas:api["api"]
   end
   subgraph :feature:categories
-    :feature:categories:impl["impl"]
     :feature:categories:api["api"]
+    :feature:categories:impl["impl"]
   end
   subgraph :feature:ingredients
     :feature:ingredients:api["api"]
@@ -71,24 +71,21 @@ graph TB
   :feature:youtube:impl --> :core:ui
   :feature:youtube:impl --> :feature:youtube:api
   :feature:meals:api --> :core:common
-  :inject --> :core:network
-  :inject --> :core:database
-  :inject --> :core:common
-  :inject --> :core:ui
-  :inject --> :feature:areas:impl
-  :inject --> :feature:categories:impl
-  :inject --> :feature:ingredients:impl
-  :inject --> :feature:meals:impl
-  :inject --> :feature:youtube:impl
   :feature:areas:api --> :core:common
   :app --> :core:common
+  :app --> :core:database
   :app --> :core:ui
-  :app --> :inject
+  :app --> :core:network
   :app --> :feature:areas:api
+  :app --> :feature:areas:impl
   :app --> :feature:categories:api
+  :app --> :feature:categories:impl
   :app --> :feature:ingredients:api
+  :app --> :feature:ingredients:impl
   :app --> :feature:meals:api
+  :app --> :feature:meals:impl
   :app --> :feature:youtube:api
+  :app --> :feature:youtube:impl
   :feature:categories:impl --> :core:network
   :feature:categories:impl --> :core:database
   :feature:categories:impl --> :core:common
@@ -122,12 +119,11 @@ class :feature:meals:api android-library
 class :feature:youtube:api android-library
 class :feature:ingredients:api android-library
 class :feature:youtube:impl android-library
-class :inject android-library
+class :app android-application
+class :feature:categories:api android-library
 class :feature:categories:impl android-library
 class :feature:ingredients:impl android-library
 class :feature:meals:impl android-library
-class :app android-application
-class :feature:categories:api android-library
 
 ```
 ## Architecture

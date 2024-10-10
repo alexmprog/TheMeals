@@ -1,4 +1,4 @@
-package com.alexmprog.themeals.inject
+package com.alexmprog.themeals.di
 
 import android.content.Context
 import com.alexmprog.themeals.core.common.dispatcher.DispatchersModule

@@ -16,7 +16,7 @@ import org.koin.core.annotation.Single
 @Named("MealsNavigation")
 class MealsNavigation : FeatureNavigation {
 
-    override fun build(graphBuilder: NavGraphBuilder, navController: NavHostController) =
+    override fun registerGraph(graphBuilder: NavGraphBuilder, navController: NavHostController) =
         with(graphBuilder) {
             composable<MealsListScreenRoute> {
                 MealsListScreen {

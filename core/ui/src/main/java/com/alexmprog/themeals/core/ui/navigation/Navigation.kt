@@ -5,5 +5,5 @@ import androidx.navigation.NavHostController
 
 interface FeatureNavigation {
 
-    fun build(graphBuilder: NavGraphBuilder, navController: NavHostController)
+    fun registerGraph(graphBuilder: NavGraphBuilder, navController: NavHostController)
 }

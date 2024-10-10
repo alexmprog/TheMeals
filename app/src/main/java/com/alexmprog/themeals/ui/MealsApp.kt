@@ -119,7 +119,7 @@ internal fun MealsApp(appState: MealsAppState) {
             popEnterTransition = { fadeIn() },
             exitTransition = { fadeOut() },
             popExitTransition = { fadeOut() }) {
-            appState.features.forEach { feature -> feature.build(this, navController) }
+            appState.features.forEach { feature -> feature.registerGraph(this, navController) }
         }
     }
 }

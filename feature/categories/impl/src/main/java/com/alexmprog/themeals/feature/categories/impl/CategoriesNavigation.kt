@@ -15,7 +15,7 @@ import org.koin.core.annotation.Single
 @Named("CategoriesNavigation")
 class CategoriesNavigation : FeatureNavigation {
 
-    override fun build(graphBuilder: NavGraphBuilder, navController: NavHostController) =
+    override fun registerGraph(graphBuilder: NavGraphBuilder, navController: NavHostController) =
         with(graphBuilder) {
             composable<CategoriesListScreenRoute> {
                 CategoriesListScreen(onCategoryClick = {

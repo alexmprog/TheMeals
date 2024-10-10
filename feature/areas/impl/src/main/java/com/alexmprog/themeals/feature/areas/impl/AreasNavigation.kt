@@ -15,7 +15,7 @@ import org.koin.core.annotation.Single
 @Named("AreasNavigation")
 class AreasNavigation : FeatureNavigation {
 
-    override fun build(graphBuilder: NavGraphBuilder, navController: NavHostController) =
+    override fun registerGraph(graphBuilder: NavGraphBuilder, navController: NavHostController) =
         with(graphBuilder) {
             composable<AreasListScreenRoute> {
                 AreasListScreen {

@@ -14,7 +14,7 @@ import org.koin.core.annotation.Single
 @Named("YoutubeNavigation")
 class YoutubeNavigation : FeatureNavigation {
 
-    override fun build(graphBuilder: NavGraphBuilder, navController: NavHostController) =
+    override fun registerGraph(graphBuilder: NavGraphBuilder, navController: NavHostController) =
         with(graphBuilder) {
             composable<YoutubeScreenRoute> { backStackEntry ->
                 val route = backStackEntry.toRoute<YoutubeScreenRoute>()
