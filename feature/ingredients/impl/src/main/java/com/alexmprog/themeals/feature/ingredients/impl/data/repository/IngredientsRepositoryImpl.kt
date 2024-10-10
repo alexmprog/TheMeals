@@ -1,7 +1,5 @@
 package com.alexmprog.themeals.feature.ingredients.impl.data.repository
 
-import com.alexmprog.themeals.core.common.dispatcher.CommonDispatchers
-import com.alexmprog.themeals.core.common.dispatcher.Dispatcher
 import com.alexmprog.themeals.core.common.model.ErrorType
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.core.database.dao.IngredientDao
@@ -18,12 +16,11 @@ import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
-internal class IngredientsRepositoryImpl @Inject constructor(
+internal class IngredientsRepositoryImpl(
     private val ingredientDao: IngredientDao,
     private val ingredientsService: IngredientsService,
-    @Dispatcher(CommonDispatchers.IO) private val dispatcher: CoroutineDispatcher
+    private val dispatcher: CoroutineDispatcher
 ) : IngredientsRepository {
 
     override fun getIngredients(): Flow<Resource<List<Ingredient>>> = flow {

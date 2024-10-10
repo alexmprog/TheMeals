@@ -9,6 +9,7 @@ import com.alexmprog.themeals.core.database.dao.IngredientDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -18,7 +19,7 @@ internal object DatabaseModule {
 
     @Provides
     @Singleton
-    fun providesMealsDatabase(context: Context): MealsDatabase =
+    fun providesMealsDatabase(@ApplicationContext context: Context): MealsDatabase =
         Room.databaseBuilder(
             context,
             MealsDatabase::class.java,

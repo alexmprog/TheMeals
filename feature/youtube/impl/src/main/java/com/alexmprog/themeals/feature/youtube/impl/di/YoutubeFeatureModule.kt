@@ -1,7 +1,8 @@
-package com.alexmprog.themeals.feature.ingredients.impl.di
+package com.alexmprog.themeals.feature.youtube.impl.di
 
 import com.alexmprog.themeals.core.ui.navigation.FeatureNavigation
-import com.alexmprog.themeals.feature.ingredients.impl.IngredientsNavigation
+import com.alexmprog.themeals.feature.youtube.impl.YoutubeNavigation
+
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -10,9 +11,9 @@ import dagger.multibindings.IntoSet
 
 @InstallIn(SingletonComponent::class)
 @Module
-internal interface IngredientsFeatureModule {
+internal interface MealsFeatureModule {
 
     @Binds
     @IntoSet
-    fun bindIngredientsFeatureNavigation(impl: IngredientsNavigation): FeatureNavigation
+    fun bindYoutubeFeatureNavigation(impl: YoutubeNavigation): FeatureNavigation
 }

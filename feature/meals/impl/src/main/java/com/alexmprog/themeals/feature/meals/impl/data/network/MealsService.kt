@@ -1,4 +1,4 @@
-package com.alexmprog.themeals.feature.meals.impl.data
+package com.alexmprog.themeals.feature.meals.impl.data.network
 
 import retrofit2.http.GET
 import retrofit2.http.Query

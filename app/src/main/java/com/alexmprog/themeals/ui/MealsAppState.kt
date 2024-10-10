@@ -10,13 +10,13 @@ import com.alexmprog.themeals.core.ui.navigation.FeatureNavigation
 @Stable
 class MealsAppState(
     val navController: NavHostController,
-    val features: List<FeatureNavigation>
+    val features: Set<FeatureNavigation>
 )
 
 @Composable
 fun rememberMealsAppState(
     mainNavController: NavHostController = rememberNavController(),
-    features: List<FeatureNavigation>
+    features: Set<FeatureNavigation>
 ): MealsAppState {
     return remember(mainNavController, features) {
         MealsAppState(navController = mainNavController, features = features)

@@ -1,13 +1,11 @@
 package com.alexmprog.themeals.feature.areas.impl.data.repository
 
-import com.alexmprog.themeals.core.common.dispatcher.CommonDispatchers
 import com.alexmprog.themeals.core.database.dao.AreaDao
 import com.alexmprog.themeals.core.database.model.AreaEntity
 import com.alexmprog.themeals.feature.area.api.domain.repository.AreasRepository
 import com.alexmprog.themeals.feature.area.api.domain.model.Area
 import com.alexmprog.themeals.feature.areas.impl.data.network.AreaDTO
 import com.alexmprog.themeals.feature.areas.impl.data.network.AreasService
-import com.alexmprog.themeals.core.common.dispatcher.Dispatcher
 import com.alexmprog.themeals.core.common.model.ErrorType
 import com.alexmprog.themeals.core.common.model.Resource
 import kotlinx.coroutines.CoroutineDispatcher

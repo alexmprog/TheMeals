@@ -1,24 +1,24 @@
-package com.alexmprog.themeals.feature.meals.impl.data
+package com.alexmprog.themeals.feature.meals.impl.data.repository
 
-import com.alexmprog.themeals.core.common.dispatcher.CommonDispatchers
-import com.alexmprog.themeals.core.common.dispatcher.Dispatcher
 import com.alexmprog.themeals.core.common.model.ErrorType
 import com.alexmprog.themeals.core.common.model.Resource
 import com.alexmprog.themeals.feature.meals.api.domain.model.Meal
 import com.alexmprog.themeals.feature.meals.api.domain.model.MealDetails
 import com.alexmprog.themeals.feature.meals.api.domain.repository.MealsRepository
 import com.alexmprog.themeals.feature.meals.api.domain.model.MealsSearchSource
+import com.alexmprog.themeals.feature.meals.impl.data.network.MealDTO
+import com.alexmprog.themeals.feature.meals.impl.data.network.MealDetailsDTO
+import com.alexmprog.themeals.feature.meals.impl.data.network.MealsService
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
-internal class MealsRepositoryImpl @Inject constructor(
+internal class MealsRepositoryImpl (
     private val mealsService: MealsService,
-    @Dispatcher(CommonDispatchers.IO) private val dispatcher: CoroutineDispatcher
+    private val dispatcher: CoroutineDispatcher
 ) : MealsRepository {
 
     override fun getMealsBySource(

@@ -15,9 +15,10 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import javax.inject.Inject
 
 @HiltViewModel
-internal class MealsListViewModel(
+internal class MealsListViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     getMealsUseCase: GetMealsUseCase
 ) : ViewModel() {
