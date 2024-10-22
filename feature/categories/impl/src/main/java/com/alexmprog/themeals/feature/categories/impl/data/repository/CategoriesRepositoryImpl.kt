@@ -18,11 +18,12 @@ import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-internal class CategoriesRepositoryImpl(
+internal class CategoriesRepositoryImpl @Inject constructor(
     private val categoryDao: CategoryDao,
     private val categoriesService: CategoriesService,
-    private val dispatcher: CoroutineDispatcher
+    @Dispatcher(CommonDispatchers.IO) private val dispatcher: CoroutineDispatcher
 ) : CategoriesRepository {
 
     override fun getCategories(): Flow<Resource<List<Category>>> = flow {

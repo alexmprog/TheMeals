@@ -1,5 +1,7 @@
 package com.alexmprog.themeals.feature.areas.impl.data.repository
 
+import com.alexmprog.themeals.core.common.dispatcher.CommonDispatchers
+import com.alexmprog.themeals.core.common.dispatcher.Dispatcher
 import com.alexmprog.themeals.core.database.dao.AreaDao
 import com.alexmprog.themeals.core.database.model.AreaEntity
 import com.alexmprog.themeals.feature.area.api.domain.repository.AreasRepository
@@ -16,11 +18,12 @@ import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-internal class AreasRepositoryImpl(
+internal class AreasRepositoryImpl @Inject constructor(
     private val areaDao: AreaDao,
     private val areasService: AreasService,
-    private val dispatcher: CoroutineDispatcher
+    @Dispatcher(CommonDispatchers.IO) private val dispatcher: CoroutineDispatcher
 ) : AreasRepository {
 
     override fun getAreas(): Flow<Resource<List<Area>>> = flow {
